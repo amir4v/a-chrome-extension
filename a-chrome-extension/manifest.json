@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "extension name",
+    "version": "0.0.1",
+    "description": "extension description",
+    
+    "background.service_worker": {
+        "scripts": ["background.js"]
+    },
+    "content_scripts": [{
+        "matches": [
+            "*://*.site.com/*",
+            "*://*/*"
+        ],
+        "js": ["content.js"]
+    }],
+    "action": {
+        "default_popup": "extension.html",
+        "default_icon": {}
+    },
+    "permissions": [
+        "tabs",
+        "activeTab"
+    ]
+}
